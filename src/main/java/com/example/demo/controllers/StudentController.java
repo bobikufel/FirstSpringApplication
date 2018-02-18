@@ -33,5 +33,15 @@ public class StudentController {
         return ages;
     }
 
+     @GetMapping("/students/names")
+    public List<String> getAllStrings() {
+        List<Student> students = studentRepository.findAll();
+        List<String> names = new ArrayList();
+        for(int i=0;i<students.size();i++)
+        {
+            names.add(students.get(i).getName());
+        }
+        return names;
+    }
 
 }
